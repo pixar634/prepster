@@ -3,7 +3,8 @@
 **Walk into the interview knowing the questions.** Upload your CV and the job description. Prepster researches the
 company, plans the rounds you're likely to face and writes answers from your real experience. Then you practise.
 
-> **Status: early.** The project was just set up; none of the features below work yet. Progress and the plan are in
+> **Status: early.** The sample works: run it and open `/sample` for a finished prep with invented people, the practice
+> deck and the practical in your browser. Preps for your own CV are not built yet. The plan is in
 > [docs/DESIGN.md](docs/DESIGN.md).
 
 ## What it will do
@@ -36,10 +37,10 @@ Needs Node.js 20.9 or later.
 ```bash
 npm install
 cp .env.example .env.local   # optional: lets the server use your own key, see the comments inside
-npm run dev                  # http://localhost:3000
+npm run dev                  # http://localhost:3000, then open /sample
 ```
 
-Before pushing: `npm run check` (lint with zero warnings, typecheck, build). CI runs the same.
+Before pushing: `npm run check` (lint with zero warnings, typecheck, tests, build). CI runs the same.
 
 ## Stack
 

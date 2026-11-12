@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { buttonClass } from "@/components/ui/button";
+
 const REPO = "https://github.com/pixar634/prepster";
 
 const COMING = [
@@ -42,8 +45,15 @@ export default function Home() {
         ))}
       </ul>
 
+      <div className="flex flex-wrap items-center gap-3">
+        <Link href="/sample" className={buttonClass({ size: "lg" })}>
+          Try the sample
+        </Link>
+        <span className="text-sm text-muted-foreground">No key and no sign-up. Invented people, real practice.</span>
+      </div>
+
       <footer className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
-        <span className="rounded-full border border-border px-3 py-1">Being built: nothing above works yet</span>
+        <span className="rounded-full border border-border px-3 py-1">Early: preps for your own CV are not built yet</span>
         <a className="underline underline-offset-4 hover:text-foreground" href={REPO}>
           Follow along on GitHub
         </a>

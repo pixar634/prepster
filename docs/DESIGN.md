@@ -1,19 +1,21 @@
 # Prepster: design and roadmap
 
-**Status:** accepted 2026-11-13. Phase 0 (cleanup) built; nothing user-facing yet.
+**Status:** accepted 2026-11-13. Phase 0 (cleanup) and Phase 1 (the sample) built.
 **Reference:** [JobMagnet's interview module](https://github.com/pixar634/jobmagnet/blob/main/app/interview.py), the
 engine this ports.
 
 ## ⏱ SESSION HANDOFF: read this first
 
-**2026-11-13: cleanup done; next is the app shell with the no-key sample.**
-- **Live state:** nothing deployed. `main` lints, typechecks and builds on Next.js 16.4.6 (`npm run check`, locally
-  and in CI).
-- **Done:** decisions D1 to D7 below; dependencies updated (Next.js 15.3 to 16.4, React 19.3, Tailwind 4.3, ESLint flat
-  config); CI and Dependabot; README; MIT licence; a holding page that says nothing works yet.
-- **Next, in order:** 1. Phase 1 (shell, sample prep, practice deck, practical sample, browser sandbox).
-  2. Phase 2 (real preps with a key). 3. Phase 3 (deploy and a real-user test).
-- **Owed checks:** none yet.
+**2026-11-13: Phase 1 built; next is real preps with a key (Phase 2).**
+- **Live state:** nothing deployed. `npm run dev`, then open `/sample`: a finished prep with invented people, the adaptive
+  practice deck for each round, and the warehouse practical running in the browser sandbox (Python and JavaScript).
+- **Done:** Phase 0 (cleanup); Phase 1 (below). Checked by looking, in Chrome at 1280 and 390 px wide: two "got it" in a
+  row raised the difficulty; the reference solutions scored 41 of 41 through the page in both languages; an infinite loop
+  was stopped after 10 seconds and the page recovered; no console errors.
+- **Next, in order:** 1. Phase 2 (key settings, intake, research, rounds, spoken answers, export). 2. Phase 3 (deploy and
+  a real-user test).
+- **Owed checks:** the sandbox on a real phone (only a 390 px desktop window so far); keyboard shortcuts with a screen
+  reader; the first Python run's download time on mobile data.
 - **Open decisions:** O1 and O2 below.
 - **Verify with:** `npm ci && npm run check`
 
@@ -104,9 +106,10 @@ calls Claude, checks the reply against its schema and returns it. Keys and CVs a
 
 - ✅ **Phase 0, cleanup.** Dependencies, CI, Dependabot, README, licence, this doc. *Exit:* `npm run check` passes
   locally and in CI.
-- ☐ **Phase 1, the app shell and the no-key sample.** A sample prep (invented candidate and company), the practice
+- ✅ **Phase 1, the app shell and the no-key sample (built 2026-11-13).** A sample prep (invented candidate and company), the practice
   deck, the practical with the warehouse sample, and the browser sandbox. *Exit:* the sample's reference solutions pass
-  every test in the sandbox, in Python and JavaScript, checked by a test; screenshots at phone and desktop width.
+  every test in the sandbox, in Python and JavaScript, checked by a test (`lib/__tests__/sandbox.test.ts`, which loads the
+  real `public/runner.js`); checked in the browser at phone and desktop width.
 - ☐ **Phase 2, real preps with a key.** Key settings, intake, research, rounds, spoken answers, Markdown export.
   *Exit:* one real prep end to end on a local run; a unit test shows research without links is dropped.
 - ☐ **Phase 3, deploy and a real-user test.** Hosting (O1), privacy page; 3 to 5 people preparing for real interviews
