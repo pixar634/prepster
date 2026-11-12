@@ -7,10 +7,10 @@ const monaSans = Mona_Sans({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
   title: "Prepster",
-  description: "An AI-powered interview preparation platform",
+  description:
+    "Interview prep from your real CV: company research with sources, the rounds you'll face, and practice.",
 };
 
 export default function RootLayout({
